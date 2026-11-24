@@ -1,0 +1,48 @@
+{
+  "name": "acoustic_sense",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "db": "tsx scripts/db-server.ts",
+    "broker": "tsx scripts/broker.ts",
+    "broker:sync-users": "tsx scripts/sync-broker-users.ts",
+    "seed": "tsx scripts/seed.ts",
+    "simulate": "python scripts/simulator.py",
+    "demo": "concurrently -k -n db,broker,web -c blue,magenta,green \"npm:db\" \"npm:broker\" \"npm:dev\""
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.108.4",
+    "bcryptjs": "^3.0.3",
+    "mqtt": "^5.16.1",
+    "next": "16.4.6",
+    "pg": "^8.23.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "recharts": "^3.11.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@electric-sql/pglite": "^0.6.0",
+    "@electric-sql/pglite-socket": "^0.3.0",
+    "@tailwindcss/turbopack": "4.3.3",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/node": "^24.19.2",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "aedes": "^1.2.0",
+    "concurrently": "^10.0.7",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "tailwindcss": "4.3.3",
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^4.1.12"
+  }
+}
